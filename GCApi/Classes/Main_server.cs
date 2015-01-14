@@ -70,7 +70,7 @@ namespace GCApi.Classes
             res = get();
         }
 
-        public void status()
+        public bool status()
         {
             int i = res.IndexOf("status:");
             string a = "";
@@ -81,15 +81,12 @@ namespace GCApi.Classes
             }
             if (a == "true")
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Сервер онлайн.");
+                return true;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Сервер оффлайн.");
+                return false;
             }
-            Console.ForegroundColor = ConsoleColor.White;
         }
 
     }
